@@ -1,0 +1,44 @@
+warning: in the working copy of 'pom.xml', LF will be replaced by CRLF the next time Git touches it
+[1mdiff --git a/pom.xml b/pom.xml[m
+[1mindex 278e168..d457013 100644[m
+[1m--- a/pom.xml[m
+[1m+++ b/pom.xml[m
+[36m@@ -12,6 +12,7 @@[m
+ 	<artifactId>travelbooking-ms</artifactId>[m
+ 	<version>0.0.1-SNAPSHOT</version>[m
+ 	<name>travelbooking-ms</name>[m
+[32m+[m	[32m<packaging>war</packaging>[m
+ 	<description>Demo project for Spring Boot</description>[m
+ 	<properties>[m
+ 		<java.version>17</java.version>[m
+[1mdiff --git a/src/main/java/com/example/travelbookingms/Visa.java b/src/main/java/com/example/travelbookingms/Visa.java[m
+[1mindex 892178a..38b7cd8 100644[m
+[1m--- a/src/main/java/com/example/travelbookingms/Visa.java[m
+[1m+++ b/src/main/java/com/example/travelbookingms/Visa.java[m
+[36m@@ -1,2 +1,13 @@[m
+[31m-package com.example.travelbookingms;public class Visa {[m
+[32m+[m[32mpackage com.example.travelbookingms;[m
+[32m+[m
+[32m+[m[32mimport org.springframework.web.bind.annotation.GetMapping;[m
+[32m+[m[32mimport org.springframework.web.bind.annotation.RestController;[m
+[32m+[m[32mimport org.springframework.web.bind.annotation.RequestMapping;[m
+[32m+[m
+[32m+[m[32m@RestController[m
+[32m+[m[32mpublic class visa {[m
+[32m+[m[32m    @GetMapping("/myvisa")[m
+[32m+[m[32m    public String getData() {[m
+[32m+[m[32m        return "Need to apply H1B visa first";[m
+[32m+[m[32m    }[m
+ }[m
+[1mdiff --git a/src/main/java/com/example/travelbookingms/train.java b/src/main/java/com/example/travelbookingms/train.java[m
+[1mindex 4c9c0ea..7abee84 100644[m
+[1m--- a/src/main/java/com/example/travelbookingms/train.java[m
+[1m+++ b/src/main/java/com/example/travelbookingms/train.java[m
+[36m@@ -8,6 +8,6 @@[m [mimport org.springframework.web.bind.annotation.RequestMapping;[m
+ public class train {[m
+     @GetMapping("/mytrain")[m
+     public String getData() {[m
+[31m-        return "Please book your train ticket";[m
+[32m+[m[32m        return "Please book your train ticket between time 1am to 10 pm";[m
+     }[m
+ }[m

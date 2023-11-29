@@ -5,9 +5,9 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @RestController
-public class train {
-    @GetMapping("/mytrain")
+public class holidaypackage {
+    @GetMapping("/goa")
     public String getData() {
-        return "Please book your train ticket between time 1am to 10 pm";
+        return "Please book your fight and hotel ";
     }
 }
