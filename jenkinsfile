@@ -1,11 +1,13 @@
-pipeline{
-  
-  stages{
-  
-    stage{
-	
-	   step(check java version){
-		   sh "java --version"}
-		}
-	}
+pipeline {
+    agent any
+
+    stages {
+        stage('Check Java Version') {
+            steps {
+                script {
+                    sh "java --version"
+                }
+            }
+        }
+    }
 }

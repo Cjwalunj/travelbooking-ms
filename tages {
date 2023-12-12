@@ -1,0 +1,28 @@
+[1mdiff --git a/jenkinsfile b/jenkinsfile[m
+[1mindex cf3bb89..ba116ee 100644[m
+[1m--- a/jenkinsfile[m
+[1m+++ b/jenkinsfile[m
+[36m@@ -1,11 +1,13 @@[m
+[31m-pipeline{[m
+[31m-  [m
+[31m-  stages{[m
+[31m-  [m
+[31m-    stage{[m
+[31m-	[m
+[31m-	   step(check java version){[m
+[31m-		   sh "java --version"}[m
+[31m-		}[m
+[31m-	}[m
+[32m+[m[32mpipeline {[m
+[32m+[m[32m    agent any[m
+[32m+[m
+[32m+[m[32m    stages {[m
+[32m+[m[32m        stage('Check Java Version') {[m
+[32m+[m[32m            steps {[m
+[32m+[m[32m                script {[m
+[32m+[m[32m                    sh "java --version"[m
+[32m+[m[32m                }[m
+[32m+[m[32m            }[m
+[32m+[m[32m        }[m
+[32m+[m[32m    }[m
+ }[m
