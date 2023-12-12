@@ -1,0 +1,11 @@
+pipeline{
+  
+  stages{
+  
+    stage{
+	
+	   step(check java version){
+		   sh "java --version"}
+		}
+	}
+}
