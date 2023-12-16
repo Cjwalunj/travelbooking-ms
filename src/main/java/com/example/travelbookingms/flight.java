@@ -8,6 +8,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class flight {
     @GetMapping("/myflight")
     public String getData() {
-        return "Please book your flight ticket";
+        return "Please book your flight ticket(not for ukrine and gaza";
     }
 }
