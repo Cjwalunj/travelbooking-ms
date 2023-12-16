@@ -22,7 +22,7 @@ pipeline {
             steps {
                 script {
                     // Use the defined Maven tool
-                    sh 'mvn clean compile'
+                    sh 'mvn clean package'
                 }
             }
         }
