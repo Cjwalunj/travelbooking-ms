@@ -1,40 +1,39 @@
-------------
-pipeline{
+pipeline {
   options {
-    buildDiscarder (logRotator (numTokeepStr: '5', artifactNumkeepStr: '5'
+    buildDiscarder(logRotator(numToKeepStr: '5', artifactNumToKeepStr: '5'))
   }
-  stages{
-    stage('code compile'{
-	  steps{
-	    echo 'ccompiling code'
-		'sh mvn clean compile'
-		echo 'java compilor'
-	  }
-	}
-	stage('code package'{
-	  steps{
-	    echo ' code packaging'
-		'sh mvn clean package'
-		echo 'code packaging is'))
-	  }
-	  agent any
-	  tools{
-	    maven 'mvn_3.9.6'
-
-	}
-	stage('code test'{
-	  steps{
-	    echo 'code testing'
-	    'sh mvn test'
-		echo 'code testing on'
-	  }
-	}
-	stage('code run of local machine'{
-	  steps{
-	    echo code run on local'
-	    'sh mvn spring-boot:run'
-		echo 'code is running'
-	  }
-	}
+  stages {
+    stage('code compile') {
+      steps {
+        echo 'Compiling code'
+        sh 'mvn clean compile'
+        echo 'Java compiler'
+      }
+    }
+    stage('code package') {
+      steps {
+        echo 'Code packaging'
+        sh 'mvn clean package'
+        echo 'Code packaging is done'
+      }
+    }
+    stage('code test') {
+      steps {
+        echo 'Code testing'
+        sh 'mvn test'
+        echo 'Code testing done'
+      }
+    }
+    stage('code run on local machine') {
+      steps {
+        echo 'Code run on local machine'
+        sh 'mvn spring-boot:run'
+        echo 'Code is running'
+      }
+    }
+  }
+  agent any
+  tools {
+    maven 'mvn_3.9.6'
   }
 }
