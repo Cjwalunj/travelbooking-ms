@@ -1,5 +1,8 @@
 ------------
 pipeline{
+  options {
+    buildDiscarder (logRotator (numTokeepStr: '5', artifactNumkeepStr: '5'
+  }
   stages{
     stage('code compile'{
 	  steps{
@@ -12,8 +15,12 @@ pipeline{
 	  steps{
 	    echo ' code packaging'
 		'sh mvn clean package'
-		echo 'code packaging is'
+		echo 'code packaging is'))
 	  }
+	  agent any
+	  tools{
+	    maven 'mvn_3.9.6'
+
 	}
 	stage('code test'{
 	  steps{
