@@ -1,0 +1,33 @@
+------------
+pipeline{
+  stages{
+    stage('code compile'{
+	  steps{
+	    echo 'ccompiling code'
+		'sh mvn clean compile'
+		echo 'java compilor'
+	  }
+	}
+	stage('code package'{
+	  steps{
+	    echo ' code packaging'
+		'sh mvn clean package'
+		echo 'code packaging is'
+	  }
+	}
+	stage('code test'{
+	  steps{
+	    echo 'code testing'
+	    'sh mvn test'
+		echo 'code testing on'
+	  }
+	}
+	stage('code run of local machine'{
+	  steps{
+	    echo code run on local'
+	    'sh mvn spring-boot:run'
+		echo 'code is running'
+	  }
+	}
+  }
+}
