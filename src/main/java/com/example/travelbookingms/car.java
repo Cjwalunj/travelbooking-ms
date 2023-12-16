@@ -8,6 +8,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class car {
     @GetMapping("/mycar")
     public String getData() {
-        return "Please book your car on ola or uber";
+        return "Please book your car ";
     }
 }
