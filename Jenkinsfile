@@ -1,5 +1,5 @@
 pipeline {
-    agent {label 'linuxAgent_teamA'}
+    agent any
 
     tools {
         // Define the Maven tool named 'mvn_3.9.6'
