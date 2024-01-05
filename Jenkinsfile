@@ -14,7 +14,7 @@ pipeline {
             steps {
                 echo "code compile"
                 sh "mvn clean compile"
-                echo "compilation is done'
+                echo "compilation is done"
             }
         }
     }
