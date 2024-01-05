@@ -1,38 +1,30 @@
-pipeline {
-    agent any
+pipeline{
 
-    tools {
-        // Define the Maven tool named 'mvn_3.9.6'
-        maven 'mvn_3.9.6'
-        // Add other tools as needed
+	options {
+		buildDiscarder(logROtator(numToKeepStr: '5', artifactNumTokeepStr: '5'))
+		}
+
+		agent any
+
+		tools {
+			maven 'mvn_3.9.6'
+			}
+
+  stages{
+    stage{
+      step{
+        echo 'code compile'
+        sh 'mvn clean compile'
+		echo 'compilation is done'
+
+      }
     }
-
-    stages {
-        stage('Compile') {
-            steps {
-                script {
-                    // Use the defined Maven tool
-                    sh 'mvn clean compile'
-                }
-            }
-        }
-
-        stage('Package') {
-            steps {
-                script {
-                    // Use the defined Maven tool
-                    sh 'mvn clean package'
-                }
-            }
-        }
-
-        stage('Test') {
-            steps {
-                script {
-                    // Use the defined Maven tool
-                    sh 'mvn clean test'
-                }
-            }
-        }
+    stage{
+          step{
+            echo 'code package'
+            sh 'mvn clean package'
+			echo 'packaging is done'
+      }
     }
+  }
 }
