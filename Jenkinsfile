@@ -12,9 +12,9 @@ pipeline {
     stages {
         stage {
             steps {
-                echo 'code compile'
-                sh 'mvn clean compile'
-                echo 'compilation is done'
+                echo "code compile"
+                sh "mvn clean compile"
+                echo "compilation is done'
             }
         }
     }
