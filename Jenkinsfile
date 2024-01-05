@@ -17,12 +17,5 @@ pipeline {
                 echo 'compilation is done'
             }
         }
-        stage {
-            steps {
-                echo 'code package'
-                sh 'mvn clean package'
-                echo 'packaging is done'
-            }
-        }
     }
-}
+ }
