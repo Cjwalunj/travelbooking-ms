@@ -8,6 +8,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class bus {
     @GetMapping("/mybus")
     public String getData() {
-        return "Service not available, Please try again later";
+        return "sytem is busy, Wait while we on working";
     }
 }
