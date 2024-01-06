@@ -8,10 +8,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class bus {
     @GetMapping("/mybus")
     public String getData() {
-<<<<<<< HEAD
-        return "sytem is busy, Wait while we on working";
-=======
-        return "Please book your bus ticket on redbus or MSRTC";
->>>>>>> 88b5bd15b95635e7331cac226cf57fb4343b7476
+        return "book your Ac/Non AC bus ticket on Redbus";
     }
 }
