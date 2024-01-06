@@ -1,7 +1,6 @@
-FROM tomcat :8.0.51-jre11-alpine
-MAINTAINER cjwalunj09@gmail.com
-COPY ./target/travelbooking-ms .war /usr/local/tomcat/webapps
-EXPOSE 8080
-USER travelbooking
+FROM tomcat:9.0.52-jre11-openjdk-slim
+COPY ./target/travelbooking-ms-v1.1*.war /usr/local/tomcat/webapps
+EXPOSE  9000 8080
+USER travelbooking-ms
 WORKDIR /usr/local/tomcat/webapps
-CMD ['catalina.sh"."run"]
+CMD ["catalina.sh", "run"]
