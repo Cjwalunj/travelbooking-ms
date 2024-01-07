@@ -48,7 +48,7 @@ pipeline {
                     withCredentials([string(credentialsId: 'dockerhubCred', variable: 'dockerhubCred')]) {
                         sh "docker login docker.io -u cjwalunj -p ${dockerhubCred}"
                         echo "Push Docker Image to DockerHub: In Progress"
-                        sh "docker push cjwalunj/travelbooking-ms.com:dev-travelbooking-v.1.${BUILD_NUMBER}"
+                        sh "docker push cjwalunj/travelbooking-ms:dev-travelbooking-v.1.${BUILD_NUMBER}"
                         echo "Push Docker Image to DockerHub: Completed"
                     }
                 }
