@@ -30,7 +30,7 @@ pipeline {
         stage('Building & Tag Docker Image') {
             steps {
                 echo 'Starting Building Docker Image'
-                sh "docker build -t Cjwalunj/travelbooking-ms:dev-travelbooking-v.1.${BUILD_NUMBER} ."
+                sh "docker build -t cjwalunj/travelbooking-ms:dev-travelbooking-v.1.${BUILD_NUMBER} ."
                 sh "docker build -t travelbooking-ms:dev-travelbooking-v.1.${BUILD_NUMBER} ."
                 echo 'Completed Building Docker Image'
             }
